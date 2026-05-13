@@ -1,0 +1,223 @@
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #001f3f,
+        #0077b6,
+        #00b4d8,
+        #48cae4,
+        #90e0ef
+    );
+
+    overflow: hidden;
+}
+
+/* Container */
+
+.container{
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+
+.title{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animation */
+
+@keyframes float{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-8px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* Calculator */
+
+.calculator{
+    width: 340px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    animation: wave 4s ease-in-out infinite;
+}
+
+/* Animation */
+
+@keyframes wave{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(10px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* Display */
+
+#display{
+    width: 100%;
+    height: 70px;
+
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-size: 28px;
+    text-align: right;
+
+    background: rgba(255,255,255,0.8);
+
+    color: #003049;
+
+    outline: none;
+}
+
+/* Grid */
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Buttons */
+
+button{
+    padding: 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.85);
+
+    color: #003049;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+
+button:hover{
+    transform: scale(1.08);
+    background: #caf0f8;
+}
+
+/* Active */
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* Operator */
+
+.operator{
+    background: #0077b6;
+    color: white;
+}
+
+/* Hover */
+
+.operator:hover{
+    background: #0096c7;
+}
+
+/* Clear */
+
+.clear{
+    background: #ef476f;
+}
+
+/* Hover */
+
+.clear:hover{
+    background: #d90429;
+}
+
+/* Equal */
+
+.equal{
+    grid-column: span 4;
+
+    background: #00b894;
+    color: white;
+}
+
+/* Hover */
+
+.equal:hover{
+    background: #00997a;
+}
+
+/* Responsive */
+
+@media(max-width: 400px){
+
+    .calculator{
+        width: 95%;
+        padding: 20px;
+    }
+
+    .title{
+        font-size: 1.5rem;
+    }
+
+    button{
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    #display{
+        height: 60px;
+        font-size: 24px;
+    }
+}
